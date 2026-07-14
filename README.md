@@ -9,4 +9,5 @@ Built with a modern dark-theme aesthetic using smooth scroll animations and mobi
 🛠 Tech: HTML5 · CSS3 · JavaScript · Responsive Design · GitHub Pages
 🔗 Live: [https://ans108.github.io/ansshahid_portfoli](https://ans108.github.io/ansshahid_portfolio/)
 
-<img width="1812" height="854" alt="image" src="https://github.com/user-attachments/assets/7a9bd90b-f461-4f0f-ae2f-8f848e71c984" />
+<img width="1812" height="854" alt="image" src="<img width="1912" height="847" alt="Screenshot 2026-07-14 181737" src="https://github.com/user-attachments/assets/a5b39b7d-66a5-4a28-a05b-d62ec0fe8d3a" />
+" />
