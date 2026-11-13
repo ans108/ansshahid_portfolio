@@ -127,7 +127,7 @@ start index.html
 - 🔗 **LinkedIn:** [ans-shahid](https://www.linkedin.com/in/ans-shahid-6a5080270)
 - 💻 **GitHub:** [ans108](https://github.com/ans108)
 - 📸 **Instagram:** [ans.sheikh_](https://www.instagram.com/ans.sheikh_)
-- 📍 **Location:** Lahore, Pakistan 🇵🇰
+- 📍 **Location:** Lahore, Pakistan
 
 ---
 
