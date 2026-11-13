@@ -238,6 +238,409 @@
       .stat-n{font-size:1.6rem;}
       .inner{padding:50px 4.5%;}
     }
+
+    /* ===== AI SECTION (NIKO.GE STYLE RAG ASSISTANT — V4 FINAL) ===== */
+    #ai {
+      background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15), transparent 68%), var(--bg);
+      position: relative;
+    }
+    .ai-subtitle-top {
+      text-align: center;
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.65;
+    }
+    .ai-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #100e1c;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.68), 0 0 48px rgba(124, 58, 237, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .ai-header {
+      background: #191726;
+      padding: 0.95rem 1.35rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+    .ai-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .ai-header-right {
+      display: flex;
+      align-items: center;
+    }
+    .ai-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #6366f1;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0 14px rgba(99, 102, 241, 0.4);
+    }
+    .ai-avatar.sm {
+      width: 32px;
+      height: 32px;
+      font-size: 0.74rem;
+      margin-top: 2px;
+    }
+    .ai-avatar.user-av {
+      width: 32px;
+      height: 32px;
+      font-size: 0.68rem;
+      background: #6366f1;
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.38);
+      margin-top: 2px;
+    }
+    .ai-title-wrap {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+    .ai-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: #f3f0ff;
+    }
+    .ai-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: #22c55e;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .ai-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+    .ai-reset-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-mid);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.36rem 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .ai-reset-btn:hover {
+      border-color: rgba(168, 85, 247, 0.5);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .ai-messages {
+      padding: 1.5rem 1.35rem 1rem;
+      height: 360px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      scroll-behavior: smooth;
+    }
+    .ai-msg-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.72rem;
+      animation: aiFadeIn 0.22s ease forwards;
+    }
+    .ai-msg-row.user {
+      justify-content: flex-end;
+    }
+    @keyframes aiFadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ai-bubble {
+      max-width: 80%;
+      padding: 0.88rem 1.15rem;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #ece9f8;
+      background: #191726;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      word-wrap: break-word;
+    }
+    .ai-msg-row.user .ai-bubble {
+      background: #6366f1;
+      border-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 0.72rem 1.08rem;
+    }
+    .ai-bubble strong {
+      color: #fff;
+      font-weight: 600;
+    }
+    .ai-bubble a {
+      color: #a5b4fc;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .ai-bubble a:hover {
+      color: #fff;
+    }
+    .ai-bubble ul {
+      margin: 0.45rem 0 0.2rem 1.2rem;
+    }
+    .ai-bubble li {
+      margin-bottom: 0.28rem;
+    }
+    .ai-typing {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 2px;
+    }
+    .ai-typing span {
+      width: 6px;
+      height: 6px;
+      background: var(--purple-l);
+      border-radius: 50%;
+      animation: aiBounce 1.3s infinite ease-in-out;
+    }
+    .ai-typing span:nth-child(2) { animation-delay: 0.16s; }
+    .ai-typing span:nth-child(3) { animation-delay: 0.32s; }
+    @keyframes aiBounce {
+      0%, 80%, 100% { transform: scale(0.65); opacity: 0.45; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+    .ai-prompts {
+      padding: 0.45rem 1.35rem 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.48rem;
+    }
+    .ai-pill {
+      background: rgba(99, 102, 241, 0.06);
+      border: 1px solid rgba(99, 102, 241, 0.26);
+      color: #a5b4fc;
+      font-family: inherit;
+      font-size: 0.79rem;
+      font-weight: 500;
+      padding: 0.42rem 0.9rem;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .ai-pill:hover {
+      background: rgba(99, 102, 241, 0.18);
+      border-color: rgba(168, 85, 247, 0.6);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Floating Overlay Autocomplete Bar (ZERO layout shift / panel jumping) */
+    .ai-input-area {
+      background: #151321;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.95rem 1.35rem 0.75rem;
+      position: relative;
+    }
+    .ai-live-suggest {
+      position: absolute;
+      left: 1.35rem;
+      right: 1.35rem;
+      bottom: calc(100% + 6px);
+      background: rgba(22, 20, 35, 0.96);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(124, 58, 237, 0.32);
+      border-radius: 10px;
+      padding: 0.42rem 0.75rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      gap: 0.42rem;
+      flex-wrap: wrap;
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(4px);
+      pointer-events: none;
+      transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+    }
+    .ai-live-suggest.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .ai-live-label {
+      font-size: 0.68rem;
+      color: #9090b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      margin-right: 0.15rem;
+    }
+    .ai-suggest-chip {
+      background: rgba(124, 58, 237, 0.16);
+      border: 1px solid rgba(168, 85, 247, 0.38);
+      color: #e2d9ff;
+      font-family: inherit;
+      font-size: 0.74rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.16s;
+    }
+    .ai-suggest-chip:hover {
+      background: #6366f1;
+      border-color: #818cf8;
+      color: #fff;
+    }
+
+    .ai-input-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .ai-input-wrap {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .ai-input {
+      width: 100%;
+      background: #1d1b2b;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.88rem;
+      padding: 0.78rem 1rem;
+      resize: none;
+      height: 44px;
+      max-height: 110px;
+      line-height: 1.4;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .ai-input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.18);
+    }
+    /* Animated Typewriter Ghost Placeholder (exact niko.ge look with blinking cursor |) */
+    .ai-ghost-placeholder {
+      position: absolute;
+      left: 1rem;
+      right: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #727094;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.15s;
+    }
+    .ai-ghost-placeholder.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .ai-ghost-cursor {
+      display: inline-block;
+      width: 1.5px;
+      height: 1.05em;
+      background: #908eb4;
+      margin-left: 1px;
+      animation: blink 1s step-end infinite;
+    }
+    .ai-tab-hint {
+      position: absolute;
+      right: 0.65rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.65rem;
+      color: #7c7a9a;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 0.12rem 0.42rem;
+      border-radius: 5px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .ai-input-wrap:hover .ai-tab-hint {
+      opacity: 1;
+    }
+    .ai-send-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #6366f1;
+      border: none;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .ai-send-btn:hover {
+      background: #7c3aed;
+      transform: translateY(-1px);
+    }
+    .ai-send-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+    .ai-send-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    .ai-footer-hint {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.71rem;
+      color: #5d5b7a;
+      margin-top: 0.48rem;
+      padding: 0 0.15rem;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    @media(max-width:600px){
+      .ai-bubble { max-width: 86%; font-size: 0.85rem; }
+      .ai-messages { height: 290px; padding: 1.1rem 1rem 0.8rem; }
+      .ai-prompts { padding: 0.4rem 1rem 0.85rem; }
+      .ai-pill { font-size: 0.74rem; padding: 0.36rem 0.75rem; }
+      .ai-tab-hint { display: none; }
+      .ai-live-suggest { left: 0.8rem; right: 0.8rem; }
+    }
+
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0GP3BXBGG"></script>
@@ -261,6 +664,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#ai">AI</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -287,6 +691,9 @@
       <a href="#contact" class="btn-ghost">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Get in Touch
+      </a>
+      <a href="#ai" class="btn-ghost" style="border-color:rgba(168,85,247,.4);color:var(--purple-l);">
+        &#10024; Ask My AI
       </a>
     </div>
     <div class="stats">
@@ -656,6 +1063,76 @@
 </section>
 
 <!-- CONTACT -->
+<!-- AI / RAG ASSISTANT -->
+<section id="ai">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="section-tag">&#10024; RAG / AI Assistant</div>
+      <h2 class="section-title">Talk to My <span>AI</span></h2>
+      <div class="title-accent" style="margin-left:auto;margin-right:auto;margin-bottom:1.2rem;"></div>
+      <p class="ai-subtitle-top">
+        I'm Ans's AI assistant. I can tell you about his experience, skills, projects, and background &mdash; all based on his real CV.
+      </p>
+    </div>
+
+    <div class="ai-card fade">
+      <!-- Header -->
+      <div class="ai-header">
+        <div class="ai-header-left">
+          <div class="ai-avatar">AS</div>
+          <div class="ai-title-wrap">
+            <div class="ai-title">Ans &middot; AI</div>
+            <div class="ai-status"><span class="ai-status-dot"></span>Online</div>
+          </div>
+        </div>
+        <div class="ai-header-right">
+          <button type="button" class="ai-reset-btn" id="ai-reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="ai-messages" id="ai-messages">
+        <div class="ai-msg-row bot">
+          <div class="ai-avatar sm">AS</div>
+          <div class="ai-bubble">
+            Hi! I'm Ans Shahid, Python Developer, Full Stack Web Developer &amp; Computer Vision Enthusiast. You can ask me anything about my professional experience, skills, projects, or background &mdash; I'll answer based on my actual CV. &#128075;
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested Prompts -->
+      <div class="ai-prompts" id="ai-prompts">
+        <button type="button" class="ai-pill" data-q="What is Ans's tech stack?">What is Ans's tech stack?</button>
+        <button type="button" class="ai-pill" data-q="Tell me about his AI/Computer Vision experience">Tell me about his AI/Computer Vision experience</button>
+        <button type="button" class="ai-pill" data-q="What projects has he worked on?">What projects has he worked on?</button>
+        <button type="button" class="ai-pill" data-q="Where did Ans study?">Where did Ans study?</button>
+        <button type="button" class="ai-pill" data-q="What certifications does he hold?">What certifications does he hold?</button>
+        <button type="button" class="ai-pill" data-q="How many years of experience does he have?">How many years of experience does he have?</button>
+      </div>
+
+      <!-- Input Area (with Floating Overlay Suggestion Bar) -->
+      <div class="ai-input-area">
+        <div class="ai-live-suggest" id="ai-live-suggest"></div>
+        <div class="ai-input-row">
+          <div class="ai-input-wrap">
+            <textarea id="ai-input" class="ai-input" rows="1" aria-label="Ask Ans AI"></textarea>
+            <div class="ai-ghost-placeholder" id="ai-ghost-placeholder">
+              <span id="ai-ghost-text"></span><span class="ai-ghost-cursor"></span>
+            </div>
+            <span class="ai-tab-hint" id="ai-tab-hint">Tab &#8677; to fill</span>
+          </div>
+          <button type="button" id="ai-send-btn" class="ai-send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </div>
+        <div class="ai-footer-hint">
+          <span>Enter to send &middot; Shift+Enter for new line</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="inner">
     <div class="fade" style="text-align:center">
@@ -758,6 +1235,513 @@
     });
   },{threshold:0.2});
   bars.forEach(b=>barObs.observe(b));
+
+  // ===== ANS · AI (V4 FINAL: NIKO.GE TYPEWRITER + ZERO-JUMP AUTOCOMPLETE + FUZZY RAG) =====
+  const AI_API_ENDPOINT = ""; // Optional: Add Cloudflare Worker / Vercel LLM proxy URL here
+
+  // 1. Animated Typewriter Suggestions inside Input Box (just like niko.ge)
+  const PLACEHOLDER_SUGGESTIONS = [
+    "Where did Ans study?",
+    "What projects has he worked on?",
+    "Tell me about his experience?",
+    "How many years of experience does he have?",
+    "What is Ans's tech stack?",
+    "Tell me about his AI/Computer Vision experience",
+    "What certifications does he hold?",
+    "Who are you?",
+    "How can I contact or hire Ans?"
+  ];
+
+  const aiMessagesEl = document.getElementById('ai-messages');
+  const aiInputEl = document.getElementById('ai-input');
+  const aiGhostWrap = document.getElementById('ai-ghost-placeholder');
+  const aiGhostText = document.getElementById('ai-ghost-text');
+  const aiLiveSuggest = document.getElementById('ai-live-suggest');
+  const aiSendBtn = document.getElementById('ai-send-btn');
+  const aiResetBtn = document.getElementById('ai-reset-btn');
+  const aiPromptsEl = document.getElementById('ai-prompts');
+
+  let phIdx = 0, phChar = 0, phDeleting = false;
+  let currentGhostFullString = PLACEHOLDER_SUGGESTIONS[0];
+
+  function tickPlaceholder() {
+    if (aiInputEl.value.length > 0) {
+      aiGhostWrap.classList.add('hidden');
+      setTimeout(tickPlaceholder, 200);
+      return;
+    }
+    aiGhostWrap.classList.remove('hidden');
+    const target = PLACEHOLDER_SUGGESTIONS[phIdx];
+    currentGhostFullString = target;
+
+    if (!phDeleting) {
+      phChar++;
+      aiGhostText.textContent = target.slice(0, phChar);
+      if (phChar >= target.length) {
+        phDeleting = true;
+        setTimeout(tickPlaceholder, 2100);
+        return;
+      }
+      setTimeout(tickPlaceholder, 65);
+    } else {
+      phChar--;
+      aiGhostText.textContent = target.slice(0, phChar);
+      if (phChar <= 0) {
+        phDeleting = false;
+        phIdx = (phIdx + 1) % PLACEHOLDER_SUGGESTIONS.length;
+        setTimeout(tickPlaceholder, 320);
+        return;
+      }
+      setTimeout(tickPlaceholder, 32);
+    }
+  }
+  tickPlaceholder();
+
+  // 2. Common Typo Normalization + Levenshtein Fuzzy Matching
+  const TYPO_MAP = {
+    "experince": "experience",
+    "experiance": "experience",
+    "exprience": "experience",
+    "expereince": "experience",
+    "exprince": "experience",
+    "expeirence": "experience",
+    "exp": "experience",
+    "expe": "experience",
+    "skils": "skills",
+    "skil": "skill",
+    "tecnology": "technology",
+    "teck": "tech",
+    "stak": "stack",
+    "porject": "project",
+    "porjects": "projects",
+    "projcts": "projects",
+    "prjects": "projects",
+    "certifcation": "certification",
+    "certifcations": "certifications",
+    "cerificate": "certificate",
+    "uni": "university",
+    "universty": "university",
+    "univeristy": "university",
+    "educaton": "education",
+    "collage": "college",
+    "pyhton": "python",
+    "phyton": "python",
+    "javasript": "javascript",
+    "attenence": "attendance",
+    "attendence": "attendance",
+    "vison": "vision",
+    "langauge": "language",
+    "langauges": "languages",
+    "backgrond": "background",
+    "abou": "about",
+    "wat": "what",
+    "wht": "what",
+    "whr": "where",
+    "wich": "which",
+    "modle": "model",
+    "u": "you",
+    "ur": "your",
+    "r": "are",
+    "yr": "year",
+    "yrs": "years"
+  };
+
+  function levenshtein(a, b) {
+    if (a === b) return 0;
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+    const matrix = [];
+    for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+    for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+    for (let i = 1; i <= b.length; i++) {
+      for (let j = 1; j <= a.length; j++) {
+        if (b.charAt(i - 1) === a.charAt(j - 1)) {
+          matrix[i][j] = matrix[i - 1][j - 1];
+        } else {
+          matrix[i][j] = Math.min(
+            matrix[i - 1][j - 1] + 1,
+            matrix[i][j - 1] + 1,
+            matrix[i - 1][j] + 1
+          );
+        }
+      }
+    }
+    return matrix[b.length][a.length];
+  }
+
+  function normalizeQuery(str) {
+    const cleaned = str.toLowerCase().replace(/[?!.,;:'"()]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!cleaned) return "";
+    return cleaned.split(' ').map(w => TYPO_MAP[w] || w).join(' ');
+  }
+
+  function fuzzyWordMatch(word, target) {
+    if (word === target) return true;
+    if (target.length >= 5 && word.length >= 4) {
+      const dist = levenshtein(word, target);
+      if (dist <= 1) return true;
+      if (target.length >= 7 && dist <= 2) return true;
+    }
+    return false;
+  }
+
+  // 3. Knowledge Base Chunks (Conversational First-Person + Rich Details)
+  const ANS_CV_CHUNKS = [
+    {
+      id: "years_exp",
+      phrases: ["how many experience", "how much experience", "years of experience", "how many years", "total experience", "how long have you worked", "kitna experience", "experience you had", "experience you have"],
+      keywords: ["years", "year", "long", "many", "much", "total"],
+      answer: `I have over <strong>3+ years of professional experience</strong> across software development, data operations, technical equipment calibration, and electronics consultation, alongside delivering end-to-end applications in <strong>Python, OpenCV (Computer Vision), Flask, C++, and JavaScript</strong>. If you'd like to know about specific roles, projects, or skills, feel free to ask!`
+    },
+    {
+      id: "experience_detail",
+      phrases: ["tell me about experience", "tell me about your experience", "tell me about his experience", "work experience", "professional experience", "job history", "where have you worked", "career background", "your experience"],
+      keywords: ["experience", "worked", "work", "job", "jobs", "company", "companies", "impex", "sybrid", "mumtaz", "career", "employment", "operator", "consultant", "agent", "smt"],
+      answer: `I have <strong>3+ years of professional experience</strong> combining software development with enterprise data management and technical operations:<br><ul>
+        <li><strong>Electronics Sales Consultant | Al Mumtaz Electronics</strong> (<em>Feb 2026 &ndash; Present, Lahore</em>): Providing technical product consultation across consumer electronics categories (ACs, refrigerators, LEDs, washing machines, mobile phones).</li>
+        <li><strong>Data Operator | Impex</strong> (<em>Jun 2024 &ndash; Jan 2026, Lahore</em>): Managed and validated large-scale datasets using advanced Microsoft Excel (VLOOKUP, pivot tables, validation rules) and automated daily/weekly management reports.</li>
+        <li><strong>SMT Machine Operator | Impex</strong> (<em>Apr 2023 &ndash; Jan 2026, Lahore</em>): Operated and calibrated Surface Mount Technology (SMT) production equipment with systematic quality checks.</li>
+        <li><strong>Call Center Agent | Sybrid</strong> (<em>Jul 2022 &ndash; Mar 2023, Lahore</em>): Resolved high-volume technical and customer queries using structured troubleshooting scripts.</li>
+      </ul>If you'd like to know about my software projects or tech stack, feel free to ask!`
+    },
+    {
+      id: "ai_cv",
+      phrases: ["ai experience", "llm experience", "computer vision experience", "machine learning", "face recognition", "smart attendance", "opencv experience", "ai llm"],
+      keywords: ["ai", "llm", "vision", "opencv", "face", "facial", "recognition", "detection", "lbph", "haar", "cascade", "webcam", "attendance", "fyp", "numpy", "pillow"],
+      answer: `My AI and Computer Vision experience centers on <strong>real-time facial detection, LBPH recognition, and automated image processing in Python</strong>:<br><ul>
+        <li><strong>Smart Attendance System (Final Year Project):</strong> Engineered a fully automated attendance system using <strong>Python, OpenCV (<code>cv2</code>), Haar Cascade face detection, and the LBPH (Local Binary Pattern Histograms)</strong> recognition algorithm via live webcam feed.</li>
+        <li><strong>Model Training Pipeline:</strong> Captures and processes 30 grayscale face samples per user during registration to train a persistent LBPH model, eliminating attendance fraud and manual roll-call overhead.</li>
+        <li><strong>Full-Stack Web Integration:</strong> Built a <strong>Flask web dashboard</strong> with live camera integration, filterable attendance logs, CSV export, and a relational <strong>SQLite database</strong>, presented at the LLU FYP Exhibition (June 2026).</li>
+      </ul>`
+    },
+    {
+      id: "stack",
+      phrases: ["tech stack", "technical skills", "what skills", "programming languages", "what technologies", "tools you use", "what do you know"],
+      keywords: ["tech", "stack", "skill", "skills", "language", "languages", "programming", "framework", "tool", "tools", "database", "databases", "library", "libraries", "proficient", "expertise", "python", "javascript", "c++", "html", "css", "sql", "sqlite", "mysql", "flask", "react", "node", "excel", "git", "wordpress"],
+      answer: `My core tech stack includes <strong>Python 3.x, C, C++ (OOP), JavaScript (ES6+), HTML5, CSS3, Flask, OpenCV, and SQL</strong>:<br><ul>
+        <li><strong>Programming &amp; Web:</strong> Python 3.x, C/C++ (OOP), JavaScript (ES6+), HTML5, CSS3, Flask, React (basics), Node.js (basics), REST APIs, WordPress, and GitHub Pages.</li>
+        <li><strong>Computer Vision &amp; AI:</strong> OpenCV (<code>cv2</code>), Haar Cascade Classifier, LBPH Face Recognition, <code>face_recognition</code>, NumPy, and Pillow (PIL).</li>
+        <li><strong>Databases &amp; Data:</strong> SQLite, MySQL (DBMS), and advanced Microsoft Excel (VLOOKUP, Pivot Tables, Data Validation).</li>
+        <li><strong>Dev Tools:</strong> Git, GitHub, VS Code, Postman (API testing), Windows &amp; Linux.</li>
+      </ul>If you'd like to know how I used these in my projects, feel free to ask!`
+    },
+    {
+      id: "projects",
+      phrases: ["what projects", "projects worked on", "show me projects", "your portfolio", "built any apps", "github projects"],
+      keywords: ["project", "projects", "built", "build", "developed", "portfolio", "github", "weather", "atm", "app", "applications", "demo", "repo", "showcase"],
+      answer: `I have designed, built, and published <strong>4 major software projects</strong> on <a href="https://github.com/ans108" target="_blank" rel="noopener">GitHub (@ans108)</a>:<br><ul>
+        <li><strong>1. Smart Attendance System Using Face Recognition</strong> (<em>Python, OpenCV, Flask, SQLite, LBPH</em>) &mdash; End-to-end automated webcam attendance system with live Flask dashboard and CSV export. <a href="https://github.com/ans108/Smart-Attendance-System" target="_blank" rel="noopener">GitHub Repo</a></li>
+        <li><strong>2. Real-Time Weather Application</strong> (<em>HTML5, CSS3, JavaScript, OpenWeatherMap REST API</em>) &mdash; Responsive single-page app using async Fetch API/Promises for live global weather updates. <a href="https://ans108.github.io/weather/" target="_blank" rel="noopener">Live Demo</a></li>
+        <li><strong>3. ATM Management System</strong> (<em>C++, OOP Design Patterns</em>) &mdash; Console banking simulation applying encapsulation, abstraction, secure PIN verification, and transaction history. <a href="https://github.com/ans108/ATM-Management-System-C-OOP-" target="_blank" rel="noopener">GitHub Repo</a></li>
+        <li><strong>4. Personal Developer Portfolio Website</strong> (<em>HTML5, CSS3, JS, GitHub Pages</em>) &mdash; Responsive dark-theme portfolio featuring this interactive AI assistant.</li>
+      </ul>`
+    },
+    {
+      id: "education",
+      phrases: ["where did ans study", "where did you study", "your education", "which university", "your degree", "lahore leads"],
+      keywords: ["study", "studied", "education", "degree", "university", "college", "school", "llu", "lahore", "leads", "adp", "associate", "course", "coursework", "graduate", "graduated", "academic", "ics", "matric", "credit"],
+      answer: `I completed my <strong>Associate Degree in Computer Science (ADP CS)</strong> at <strong>Lahore Leads University (LLU), Lahore</strong> (Jan 2024 &ndash; 2026, 73+ credit hours):<br><ul>
+        <li><strong>Core CS Curriculum:</strong> Data Structures &amp; Algorithms (DSA), Object-Oriented Programming (OOP), Database Management Systems (DBMS), Web Engineering, Modern Programming Languages, Discrete Structures, and Statistics.</li>
+        <li><strong>Final Year Project:</strong> Presented my <em>Smart Attendance System Using Face Recognition</em> at the LLU FYP Exhibition (June 2026).</li>
+        <li><strong>Prior Education:</strong> Intermediate in ICS &ndash; Maths, Computer Science, Statistics (2022&ndash;2024) and Matric in Science (2022).</li>
+      </ul>`
+    },
+    {
+      id: "certifications",
+      phrases: ["what certifications", "certifications does he hold", "any certificates", "achievements", "awards"],
+      keywords: ["certification", "certifications", "certificate", "certificates", "certified", "achievement", "achievements", "award", "highlight", "highlights", "exhibition", "presenter"],
+      answer: `Here are my certifications and key achievements:<br><ul>
+        <li><strong>Full Stack Developer Certificate:</strong> Covered HTML5, CSS3, JavaScript, React (basics), Node.js, and Database Integration.</li>
+        <li><strong>FYP Exhibition Presenter (June 2026):</strong> Presented the <em>Smart Attendance System</em> at Lahore Leads University (LLU), Department of Computer Science.</li>
+        <li><strong>Live Web Deployments &amp; Open-Source Portfolio:</strong> Published 4 complete software projects on GitHub with live apps hosted on GitHub Pages.</li>
+      </ul>`
+    },
+    {
+      id: "contact",
+      phrases: ["how to contact", "contact info", "hire ans", "your email", "phone number", "where do you live", "are you open to internships"],
+      keywords: ["contact", "email", "phone", "call", "whatsapp", "hire", "hiring", "internship", "intern", "location", "city", "pakistan", "linkedin", "reach", "number", "available", "goal", "goals", "opportunity", "remote", "urdu", "english"],
+      answer: `I am based in <strong>Lahore, Pakistan</strong> and am actively seeking an <strong>entry-level Python Developer, Full Stack Developer, Computer Vision, or Software Engineer role / internship</strong>.<br><ul>
+        <li><strong>Email:</strong> <a href="mailto:anssheikh43@gmail.com">anssheikh43@gmail.com</a></li>
+        <li><strong>Phone / WhatsApp:</strong> <a href="tel:03144251026">03144251026</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ans-shahid-6a5080270" target="_blank" rel="noopener">linkedin.com/in/ans-shahid-6a5080270</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/ans108" target="_blank" rel="noopener">github.com/ans108</a></li>
+      </ul>`
+    }
+  ];
+
+  const INITIAL_GREETING = `Hi! I'm Ans Shahid, Python Developer, Full Stack Web Developer &amp; Computer Vision Enthusiast. You can ask me anything about my professional experience, skills, projects, or background &mdash; I'll answer based on my actual CV. &#128075;`;
+
+  // 4. Smart Intent & Guardrail Engine (Modeled directly on niko.ge screenshots)
+  function retrieveCVAnswer(rawQuery) {
+    const norm = normalizeQuery(rawQuery);
+    const words = norm.split(' ').filter(Boolean);
+
+    // A. Short acknowledgments ("ok", "okay", "cool", "got it", "nice", "alright", "theek hai")
+    if (/^(ok|okay|k|kk|cool|nice|great|got it|alright|fine|sure|understood|acha|theek hai|thik hai|hmm|hm|oh|ah|right|yep|yes|yeah)$/.test(norm)) {
+      return `Great! If you have any questions or need information about my professional experience or skills, just let me know. I'm here to help!`;
+    }
+
+    // B. Gratitude / Farewells
+    if (/^(thanks|thank you|thx|ty|shukriya|bye|goodbye|see ya|take care)$/.test(norm)) {
+      return `You're very welcome! If you'd like to know more about my projects, technical skills, or how to connect, feel free to ask anytime!`;
+    }
+
+    // C. Greetings ("hi", "hello", "hey", "salam")
+    if (/^(hi|hello|hey|yo|salam|assalam|assalamualaikum|aoa|greetings|good morning|good evening)$/.test(norm)) {
+      return `Hi there! &#128075; I am Ans Shahid, a Python Developer, Full Stack Web Developer, and Computer Vision Enthusiast based in Lahore, Pakistan. Feel free to ask about my experience, projects, skills, or education!`;
+    }
+
+    // D. Identity: "who are you" / "who u are" / "tell me about yourself" / "introduce yourself" / "what is your name"
+    if (/(who are you|who you are|tell me about yourself|introduce yourself|about ans|who is ans|what is your name|your bio|your summary|profile summary)/.test(norm)) {
+      return `I am <strong>Ans Shahid</strong>, a Python Developer, Full Stack Web Developer, and Computer Vision Enthusiast based in Lahore, Pakistan. I hold an Associate Degree in Computer Science (ADP CS) from Lahore Leads University and have over 3+ years of professional experience alongside building practical applications in computer vision, web development, and C++ OOP. My expertise includes Python, OpenCV, Flask, JavaScript, SQL, HTML5/CSS3, React, and Node.js. If you'd like to know more about my professional background or skills, feel free to ask!`;
+    }
+
+    // E. Visitor Identity / Personal Unknowns: "who am i?" / "what is my name" / "do you know me"
+    if (/(who am i|what is my name|do you know me|where am i|guess my name)/.test(norm)) {
+      return `I don't have that specific information. However, if you'd like to connect or share more about yourself, feel free to reach out on LinkedIn: <a href="https://www.linkedin.com/in/ans-shahid-6a5080270" target="_blank" rel="noopener">https://www.linkedin.com/in/ans-shahid-6a5080270</a>`;
+    }
+
+    // F. Technical Meta / Model Questions: "which model u are using?" / "are you gpt" / "what llm" / "how are you built" / "salary" / "age"
+    if (/(which model|what model|what llm|which llm|are you chatgpt|are you gpt|are you claude|are you gemini|how were you built|system prompt|ignore previous|your age|how old|marital|married|salary expectation)/.test(norm)) {
+      return `I don't have that specific information in my CV. However, you can connect with me on LinkedIn for more details: <a href="https://www.linkedin.com/in/ans-shahid-6a5080270" target="_blank" rel="noopener">https://www.linkedin.com/in/ans-shahid-6a5080270</a>`;
+    }
+
+    // G. Confusion / Off-topic Meta: "what are u talking about" / "what do you mean" / "kya bol rahe ho"
+    if (/(what are you talking|what do you mean|wdym|kya bol|kya keh|sense|talking about)/.test(norm)) {
+      return `I'm here to share information about my professional background, skills, experience, projects, and career goals as a Python Developer, Full Stack Web Developer, and Computer Vision Enthusiast. If you have specific questions about my work or expertise, please feel free to ask!`;
+    }
+
+    // H. Special check: "how many / how much" + "experience / years" -> years_exp chunk
+    const hasExpWord = words.some(w => fuzzyWordMatch(w, "experience") || fuzzyWordMatch(w, "years") || fuzzyWordMatch(w, "year") || fuzzyWordMatch(w, "worked"));
+    if (hasExpWord && /(how many|how much|how long|total|years of|kitna)/.test(norm)) {
+      const yrChunk = ANS_CV_CHUNKS.find(c => c.id === "years_exp");
+      return yrChunk.answer;
+    }
+    if (hasExpWord && words.length <= 6 && !words.some(w => fuzzyWordMatch(w, "ai") || fuzzyWordMatch(w, "vision") || fuzzyWordMatch(w, "opencv"))) {
+      const expChunk = ANS_CV_CHUNKS.find(c => c.id === "experience_detail");
+      return expChunk.answer;
+    }
+
+    // I. Phrase & Fuzzy Keyword Scoring across CV Chunks
+    let bestMatch = null;
+    let bestScore = 0;
+
+    for (const chunk of ANS_CV_CHUNKS) {
+      let score = 0;
+      if (chunk.phrases) {
+        for (const ph of chunk.phrases) {
+          if (norm.includes(ph)) score += 6;
+        }
+      }
+      for (const kw of chunk.keywords) {
+        for (const w of words) {
+          if (fuzzyWordMatch(w, kw)) {
+            score += (kw.length >= 5 ? 3 : 2);
+          }
+        }
+      }
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = chunk;
+      }
+    }
+
+    if (bestMatch && bestScore >= 2) {
+      return bestMatch.answer;
+    }
+
+    // J. Polite Guardrail Redirect for any other random / irrelevant query
+    return `I'm here to share information about my professional background, skills, experience, projects, and career goals as a Python Developer, Full Stack Web Developer, and Computer Vision Enthusiast. If you have specific questions about my work or expertise, please feel free to ask &mdash; or connect with me on LinkedIn: <a href="https://www.linkedin.com/in/ans-shahid-6a5080270" target="_blank" rel="noopener">https://www.linkedin.com/in/ans-shahid-6a5080270</a>`;
+  }
+
+  // 5. Zero-Jump Floating Autocomplete Suggestions (Only triggers on meaningful 3+ char words)
+  const AUTOCOMPLETE_QUESTIONS = [
+    { text: "Tell me about your experience?", triggers: ["tell", "experience", "experince", "work", "job", "career", "impex"] },
+    { text: "How many years of experience do you have?", triggers: ["how", "many", "years", "experience", "experince", "long"] },
+    { text: "What is Ans's tech stack?", triggers: ["what", "tech", "stack", "skills", "skill", "python", "languages"] },
+    { text: "Tell me about his AI/Computer Vision experience", triggers: ["computer", "vision", "opencv", "face", "lbph", "attendance"] },
+    { text: "What projects has he worked on?", triggers: ["projects", "project", "built", "portfolio", "weather", "atm", "github"] },
+    { text: "Where did Ans study?", triggers: ["where", "study", "studied", "education", "university", "degree", "llu", "college"] },
+    { text: "What certifications does he hold?", triggers: ["certifications", "certification", "certificate", "achievements", "hold"] },
+    { text: "How can I contact or hire Ans?", triggers: ["contact", "hire", "email", "phone", "reach", "internship", "linkedin"] }
+  ];
+
+  const STOP_SUGGEST_WORDS = new Set(["hi", "hey", "hello", "ok", "okay", "yes", "no", "thanks", "thank", "bye", "salam", "aoa", "hmm", "who", "you"]);
+
+  function updateLiveSuggestions(val) {
+    const rawTrim = val.trim().toLowerCase();
+    // Do not show related popup for short greetings ("hi", "ok") or < 3 chars
+    if (!rawTrim || rawTrim.length < 3 || STOP_SUGGEST_WORDS.has(rawTrim)) {
+      aiLiveSuggest.classList.remove('show');
+      return;
+    }
+
+    const clean = normalizeQuery(rawTrim);
+    const userWords = clean.split(' ').filter(w => w.length >= 3 && !STOP_SUGGEST_WORDS.has(w));
+    if (userWords.length === 0) {
+      aiLiveSuggest.classList.remove('show');
+      return;
+    }
+
+    // Match only whole word prefixes or fuzzy matches on trigger keywords (no substring "hi" inside "his")
+    const matches = AUTOCOMPLETE_QUESTIONS.filter(item => {
+      return userWords.some(uw =>
+        item.triggers.some(tr => tr.startsWith(uw) || fuzzyWordMatch(uw, tr))
+      );
+    }).map(item => item.text).slice(0, 2);
+
+    if (matches.length === 0) {
+      aiLiveSuggest.classList.remove('show');
+      return;
+    }
+
+    aiLiveSuggest.innerHTML = `<span class="ai-live-label">&#128161; Suggested:</span>` +
+      matches.map(m => `<button type="button" class="ai-suggest-chip" data-suggest="${m.replace(/"/g, '&quot;')}">${m}</button>`).join('');
+    aiLiveSuggest.classList.add('show');
+
+    aiLiveSuggest.querySelectorAll('.ai-suggest-chip').forEach(chip => {
+      chip.addEventListener('mousedown', e => {
+        e.preventDefault(); // Prevent blur before click registers
+        const qText = chip.getAttribute('data-suggest');
+        aiLiveSuggest.classList.remove('show');
+        handleUserSend(qText);
+      });
+    });
+  }
+
+  function appendUserMessage(rawText) {
+    const row = document.createElement('div');
+    row.className = 'ai-msg-row user';
+    const escaped = rawText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
+    row.innerHTML = `<div class="ai-bubble">${escaped}</div><div class="ai-avatar user-av">You</div>`;
+    aiMessagesEl.appendChild(row);
+    aiMessagesEl.scrollTop = aiMessagesEl.scrollHeight;
+  }
+
+  async function appendBotMessageStreamed(htmlContent) {
+    const row = document.createElement('div');
+    row.className = 'ai-msg-row bot';
+    const bubble = document.createElement('div');
+    bubble.className = 'ai-bubble';
+    row.innerHTML = `<div class="ai-avatar sm">AS</div>`;
+    row.appendChild(bubble);
+    aiMessagesEl.appendChild(row);
+
+    const tokens = htmlContent.match(/<[^>]+>|&[a-zA-Z0-9#]+;|[^<&]+/g) || [htmlContent];
+    let currentHtml = '';
+
+    for (const token of tokens) {
+      if (token.startsWith('<') || token.startsWith('&')) {
+        currentHtml += token;
+        bubble.innerHTML = currentHtml;
+      } else {
+        const chunks = token.match(/.{1,4}/g) || [token];
+        for (const ch of chunks) {
+          currentHtml += ch;
+          bubble.innerHTML = currentHtml;
+          aiMessagesEl.scrollTop = aiMessagesEl.scrollHeight;
+          await new Promise(r => setTimeout(r, 8));
+        }
+      }
+    }
+    aiMessagesEl.scrollTop = aiMessagesEl.scrollHeight;
+  }
+
+  let isStreaming = false;
+
+  async function handleUserSend(textOverride) {
+    if (isStreaming) return;
+    const raw = (typeof textOverride === 'string' ? textOverride : aiInputEl.value).trim();
+    if (!raw) return;
+
+    aiLiveSuggest.classList.remove('show');
+
+    if (typeof textOverride === 'string') {
+      aiInputEl.value = raw;
+      aiGhostWrap.classList.add('hidden');
+      await new Promise(r => setTimeout(r, 110));
+    }
+    aiInputEl.value = '';
+    aiInputEl.style.height = '44px';
+    aiGhostWrap.classList.remove('hidden');
+
+    isStreaming = true;
+    aiSendBtn.disabled = true;
+
+    appendUserMessage(raw);
+
+    const typingRow = document.createElement('div');
+    typingRow.className = 'ai-msg-row bot';
+    typingRow.innerHTML = `<div class="ai-avatar sm">AS</div><div class="ai-bubble"><div class="ai-typing"><span></span><span></span><span></span></div></div>`;
+    aiMessagesEl.appendChild(typingRow);
+    aiMessagesEl.scrollTop = aiMessagesEl.scrollHeight;
+
+    let replyHtml = '';
+    if (AI_API_ENDPOINT) {
+      try {
+        const res = await fetch(AI_API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: raw })
+        });
+        const data = await res.json();
+        replyHtml = data.answer || retrieveCVAnswer(raw);
+      } catch (err) {
+        replyHtml = retrieveCVAnswer(raw);
+      }
+    } else {
+      await new Promise(r => setTimeout(r, 360));
+      replyHtml = retrieveCVAnswer(raw);
+    }
+
+    typingRow.remove();
+    await appendBotMessageStreamed(replyHtml);
+
+    isStreaming = false;
+    aiSendBtn.disabled = false;
+    aiInputEl.focus();
+  }
+
+  aiSendBtn.addEventListener('click', () => handleUserSend());
+  aiInputEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleUserSend();
+    } else if (e.key === 'Tab' && !aiInputEl.value.trim()) {
+      e.preventDefault();
+      aiInputEl.value = currentGhostFullString;
+      aiGhostWrap.classList.add('hidden');
+    } else if (e.key === 'Escape') {
+      aiLiveSuggest.classList.remove('show');
+    }
+  });
+  aiInputEl.addEventListener('input', () => {
+    if (aiInputEl.value.length > 0) {
+      aiGhostWrap.classList.add('hidden');
+    } else {
+      aiGhostWrap.classList.remove('hidden');
+    }
+    aiInputEl.style.height = '44px';
+    aiInputEl.style.height = Math.min(aiInputEl.scrollHeight, 110) + 'px';
+    updateLiveSuggestions(aiInputEl.value);
+  });
+  aiInputEl.addEventListener('blur', () => {
+    setTimeout(() => aiLiveSuggest.classList.remove('show'), 150);
+  });
+
+  aiPromptsEl.querySelectorAll('.ai-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      handleUserSend(btn.getAttribute('data-q'));
+    });
+  });
+
+  aiResetBtn.addEventListener('click', () => {
+    isStreaming = false;
+    aiSendBtn.disabled = false;
+    aiLiveSuggest.classList.remove('show');
+    aiMessagesEl.innerHTML = `<div class="ai-msg-row bot"><div class="ai-avatar sm">AS</div><div class="ai-bubble">${INITIAL_GREETING}</div></div>`;
+  });
+
 </script>
 </body>
 </html>
