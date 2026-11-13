@@ -133,7 +133,7 @@ start index.html
 
 <div align="center">
 
-**Built with ❤️ by Ans Shahid**
+**Built by Ans Shahid**
 
 *Python Developer · Computer Vision · Full Stack*
 
